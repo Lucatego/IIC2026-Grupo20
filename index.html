@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Top juegos más vistos en Twitch</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Horas vistas en Twitch por trimestre (eje X anual)</title>
+  <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="titulo">Juegos más vistos en Twitch por trimestres</h1>
+  <div id="chart"></div>
+
+  <script>
+    const Q_START_MONTH = { 1: '01', 2: '04', 3: '07', 4: '10' };
+
+    function yearQToDateStr(Year_Q) {
+      const [yStr, qStr] = Year_Q.split('-Q');
+      const y = Number(yStr);
+      const q = Number(qStr);
+      const mm = Q_START_MONTH[q] || '01';
+      return `${y}-${mm}-01`;
+    }
+
+    const SCALE = 1e9;
+    const UNIT_LABEL = 'Miles de millones de horas';
+
+    fetch('Dataset/datos_limpios.json')
+      .then(r => r.json())
+      .then(rows => {
+        rows.sort((a,b) => {
+          const [ya, qa] = a.Year_Q.split('-Q').map(Number);
+          const [yb, qb] = b.Year_Q.split('-Q').map(Number);
+          return ya - yb || qa - qb;
+        });
+
+        const x = rows.map(d => yearQToDateStr(d.Year_Q));
+        const y = rows.map(d => Number(d.Hours_watched) / SCALE);
+        const quarterLabel = rows.map(d => d.Year_Q);
+
+        const trace = {
+          type: 'scatter',
+          mode: 'lines+markers',
+          x, y,
+          line: { width: 3, color: '#226699' },
+          marker: { size: 7 },
+          customdata: quarterLabel,
+          hovertemplate: 'Periodo: %{customdata}<br>Valor: %{y:,.2f} ' + UNIT_LABEL + '<extra></extra>',
+          name: 'Horas vistas (trimestral)'
+        };
+
+        const layout = {
+          title: {
+            text: '<b>Horas vistas en Twitch por trimestre</b>',
+            font: { family: 'Arial, sans-serif', size: 28, color: '#333' }
+          },
+          xaxis: {
+            title: 'Año',
+            type: 'date',
+            tickformat: '%Y',
+            dtick: 'M12',
+            ticks: 'outside',
+            showgrid: true,
+            gridcolor: '#e5e5e5',   
+            gridwidth: 1
+          },
+          yaxis: {
+            title: UNIT_LABEL,
+            rangemode: 'tozero',
+            tickformat: ',.2f',
+            showgrid: true,
+            gridcolor: '#e5e5e5',
+            gridwidth: 1
+          },
+          margin: { l: 70, r: 20, t: 80, b: 80 }
+        };
+
+        Plotly.newPlot('chart', [trace], layout, { staticPlot: true, responsive: true });
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('chart').innerHTML = 'Error cargando datos_limpios.json';
+      });
+  </script>
 </body>
 </html>
