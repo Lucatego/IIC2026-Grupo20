@@ -1,3 +1,22 @@
-.titulo{
-    font-size: large;
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+#chart {
+  width: 100%;
+  height: 600px;
+  max-width: 1200px;
+  margin: 30px auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+#chart .gtitle {
+  font-size: 28px !important;
+  font-weight: bold !important;
 }
