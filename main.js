@@ -181,31 +181,31 @@ fetch('Dataset/datos_limpios_años.json')
     layout.annotations = [
         // Primer tramo Fortnite (2017-Q3 a 2018-Q3)
         {
-            x: x[idx17Q3],
-            y: y[idx17Q3], // ajustar según escala
-            text: 'Tendencia por los juegos Battle Royale<br>y las competiciones en vivo',
+            x: x[idx17Q4],
+            y: y[idx17Q4] + 2, // ajustar según escala
+            text: 'Tendencia por los juegos<br><b>Battle Royale</b> y las<br><b>competiciones en vivo</b>',
             showarrow: true,
             arrowhead: 2,
             ax: 0,
-            ay: -60,
+            ay: -80,
             font: { size: 12 }
         },
         // Inicio del confinamiento (2020-Q1)
         {
             x: x[idxQ1],
-            y: y[idxQ1],
-            text: 'Inicio del confinamiento<br>por COVID-19 a nivel global',
+            y: y[idxQ1] - 6,
+            text: 'Inicio del confinamiento<br>por <b>COVID-19</b> a nivel global',
             showarrow: true,
             arrowhead: 2,
             ax: 0,
-            ay: 60,
+            ay: 80,
             font: { size: 12 }
         },
         // Punto máximo confinamiento (2020-Q4–2021-Q2)
         {
             x: x[idx21Q1],
-            y: y[idx21Q1],
-            text: 'Punto máximo del confinamiento <br> y auge de juegos como Among Us y GTA Online',
+            y: y[idx21Q1] + 2,
+            text: '<b>Punto máximo del confinamiento</b><br>y auge de videojuegos como<br>Among Us y GTA Online',
             showarrow: true,
             arrowhead: 2,
             ax: 0,
@@ -215,8 +215,8 @@ fetch('Dataset/datos_limpios_años.json')
         // Fin del confinamiento (2022-Q4)
         {
             x: x[idx22Q2],
-            y: y[idx22Q2],
-            text: 'Vuelta a la presencialidad en<br>diversas partes del mundo',
+            y: y[idx22Q2] - 2,
+            text: 'Vuelta a la <b>presencialidad</b> en<br>diversas partes del mundo',
             showarrow: true,
             arrowhead: 2,
             ax: 0,
@@ -226,8 +226,8 @@ fetch('Dataset/datos_limpios_años.json')
         // Tramo verde (2024-Q1–Q2)
         {
             x: x[idx24Q1],
-            y: y[idx24Q1],
-            text: 'Lanzamiento de Kick y<br>sus contratos millonarios con los streamers<br>más populares de Twitch',
+            y: y[idx24Q1] + 6,
+            text: 'Lanzamiento de <b>Kick</b> y<br>sus contratos con los streamers<br>más populares de Twitch',
             showarrow: true,
             arrowhead: 2,
             ax: 0,
