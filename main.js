@@ -158,7 +158,7 @@ fetch('Dataset/datos_limpios_años.json')
     const layout = {
         title: {
         // text: '<b>Horas vistas en Twitch por trimestre</b>',
-        text: '<b>Tiempo visualizado en streams de Twitch (en miles de años)</b>',
+        text: '<b>Tiempo de visualización en Twitch (en miles de años)</b>',
         font: { family: 'Arial, sans-serif', size: 28, color: '#333' }
         },
         xaxis: {
@@ -177,7 +177,64 @@ fetch('Dataset/datos_limpios_años.json')
         margin: { l: 70, r: 20, t: 80, b: 80 },
         showlegend: false
     };
-
+    // Anotaciones para eventos clave
+    layout.annotations = [
+        // Primer tramo Fortnite (2017-Q3 a 2018-Q3)
+        {
+            x: x[idx17Q3],
+            y: y[idx17Q3], // ajustar según escala
+            text: 'Tendencia por los juegos Battle Royale<br>y las competiciones en vivo',
+            showarrow: true,
+            arrowhead: 2,
+            ax: 0,
+            ay: -60,
+            font: { size: 12 }
+        },
+        // Inicio del confinamiento (2020-Q1)
+        {
+            x: x[idxQ1],
+            y: y[idxQ1],
+            text: 'Inicio del confinamiento<br>por COVID-19 a nivel global',
+            showarrow: true,
+            arrowhead: 2,
+            ax: 0,
+            ay: 60,
+            font: { size: 12 }
+        },
+        // Punto máximo confinamiento (2020-Q4–2021-Q2)
+        {
+            x: x[idx21Q1],
+            y: y[idx21Q1],
+            text: 'Punto máximo del confinamiento <br> y auge de juegos como Among Us y GTA Online',
+            showarrow: true,
+            arrowhead: 2,
+            ax: 0,
+            ay: -60,
+            font: { size: 12 }
+        },
+        // Fin del confinamiento (2022-Q4)
+        {
+            x: x[idx22Q2],
+            y: y[idx22Q2],
+            text: 'Vuelta a la presencialidad en<br>diversas partes del mundo',
+            showarrow: true,
+            arrowhead: 2,
+            ax: 0,
+            ay: 60,
+            font: { size: 12 }
+        },
+        // Tramo verde (2024-Q1–Q2)
+        {
+            x: x[idx24Q1],
+            y: y[idx24Q1],
+            text: 'Lanzamiento de Kick y<br>sus contratos millonarios con los streamers<br>más populares de Twitch',
+            showarrow: true,
+            arrowhead: 2,
+            ax: 0,
+            ay: -60,
+            font: { size: 12 }
+        }
+    ];
     const data = [traceMain];
     if (traceHighlight1) data.push(traceHighlight1);
     if (traceHighlight2) data.push(traceHighlight2);
