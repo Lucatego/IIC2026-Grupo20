@@ -36,16 +36,59 @@
         const y = rows.map(d => Number(d.Hours_watched) / SCALE);
         const quarterLabel = rows.map(d => d.Year_Q);
 
-        const trace = {
+        // Serie principal (negra)
+        const traceMain = {
           type: 'scatter',
-          mode: 'lines+markers',
+          mode: 'lines',
           x, y,
-          line: { width: 3, color: '#226699' },
-          marker: { size: 7 },
+          line: { width: 3, color: '#0a0a0ac8' },
+          marker: { size: 7, color: '#0a0a0ac8' },
           customdata: quarterLabel,
           hovertemplate: 'Periodo: %{customdata}<br>Valor: %{y:,.2f} ' + UNIT_LABEL + '<extra></extra>',
-          name: 'Horas vistas (trimestral)'
+          name: ''
         };
+
+        // --- Tramo resaltado 2020Q1–2020Q2 ---
+        const idxQ1 = rows.findIndex(d => d.Year_Q === "2020-Q1");
+        const idxQ2 = rows.findIndex(d => d.Year_Q === "2020-Q2");
+        let traceHighlight1 = null;
+        if (idxQ1 !== -1 && idxQ2 !== -1) {
+          traceHighlight1 = {
+            type: 'scatter',
+            mode: 'lines+markers',
+            x: [x[idxQ1], x[idxQ2]],
+            y: [y[idxQ1], y[idxQ2]],
+            line: { width: 4, color: '#a340f7' },
+            marker: { size: 9, color: '#a340f7' },
+            customdata: [quarterLabel[idxQ1], quarterLabel[idxQ2]],
+            hovertemplate: 'Periodo: %{customdata}<br>Valor: %{y:,.2f} ' + UNIT_LABEL + '<extra></extra>',
+            name: ''
+          };
+        }
+
+        // --- Tramo resaltado 2020Q4–2021Q1–2021Q2 ---
+        const idxQ4 = rows.findIndex(d => d.Year_Q === "2020-Q4");
+        const idx21Q1 = rows.findIndex(d => d.Year_Q === "2021-Q1");
+        const idx21Q2 = rows.findIndex(d => d.Year_Q === "2021-Q2");
+        let traceHighlight2 = null;
+        if (idxQ4 !== -1 && idx21Q1 !== -1 && idx21Q2 !== -1) {
+          traceHighlight2 = {
+            type: 'scatter',
+            mode: 'lines+markers',
+            x: [x[idxQ4], x[idx21Q1], x[idx21Q2]],
+            y: [y[idxQ4], y[idx21Q1], y[idx21Q2]],
+            line: { width: 4, color: '#a340f7' },
+            marker: {
+              size: [9, 0, 9],   // invisible en el medio (2021Q1)
+              color: '#a340f7',
+              opacity: 1,
+              line: { width: 0 }
+            },
+            customdata: [quarterLabel[idxQ4], quarterLabel[idx21Q1], quarterLabel[idx21Q2]],
+            hovertemplate: 'Periodo: %{customdata}<br>Valor: %{y:,.2f} ' + UNIT_LABEL + '<extra></extra>',
+            name: ''
+          };
+        }
 
         const layout = {
           title: {
@@ -53,31 +96,32 @@
             font: { family: 'Arial, sans-serif', size: 28, color: '#333' }
           },
           xaxis: {
-            title: 'Año',
             type: 'date',
             tickformat: '%Y',
             dtick: 'M12',
             ticks: 'outside',
-            showgrid: true,
-            gridcolor: '#e5e5e5',   
-            gridwidth: 1
+            showgrid: false
           },
           yaxis: {
             title: UNIT_LABEL,
             rangemode: 'tozero',
             tickformat: ',.2f',
-            showgrid: true,
-            gridcolor: '#e5e5e5',
-            gridwidth: 1
+            showgrid: false,
+            showline: true,
           },
-          margin: { l: 70, r: 20, t: 80, b: 80 }
+          margin: { l: 70, r: 20, t: 80, b: 80 },
+          showlegend: false
         };
 
-        Plotly.newPlot('chart', [trace], layout, { staticPlot: true, responsive: true });
+        const data = [traceMain];
+        if (traceHighlight1) data.push(traceHighlight1);
+        if (traceHighlight2) data.push(traceHighlight2);
+
+        Plotly.newPlot('chart', data, layout, { staticPlot: true, responsive: true });
       })
       .catch(err => {
         console.error(err);
-        document.getElementById('chart').innerHTML = 'Error cargando datos_limpios.json';
+        document.getElementById('chart').innerHTML = 'Error cargando Dataset/datos_limpios.json';
       });
   </script>
 </body>
