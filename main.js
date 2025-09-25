@@ -121,10 +121,10 @@ fetch('Dataset/avg_viewers.json')
         mode: 'lines+markers',
         x: [x[idx22Q1], x[idx22Q2], x[idx22Q3], x[idx22Q4]],
         y: [y[idx22Q1], y[idx22Q2], y[idx22Q3], y[idx22Q4]],
-        line: { width: 4, color: '#a340f7' }, // verde
+        line: { width: 4, color: '#6614adff' }, // verde
         marker: {
             size: [9, 0, 0, 9],   // igual que en el tramo morado (oculta el punto intermedio)
-            color: '#a340f7',
+            color: '#6614adff',
             opacity: 1,
             line: { width: 0 }
         },
@@ -144,10 +144,10 @@ fetch('Dataset/avg_viewers.json')
         mode: 'lines+markers',
         x: [x[idx24Q1], x[idx24Q2]],
         y: [y[idx24Q1], y[idx24Q2]],
-        line: { width: 4, color: '#2ecc71' }, // mismo verde
+        line: { width: 4, color: '#6614adff' }, // mismo verde
         marker: {
             size: [9, 9],
-            color: '#2ecc71',
+            color: '#6614adff',
             opacity: 1,
             line: { width: 0 }
         },
