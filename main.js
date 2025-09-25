@@ -12,7 +12,8 @@ const SCALE = 1e9;
 const UNIT_LABEL = 'Miles de años';
 
 //fetch('Dataset/datos_limpios.json')
-fetch('Dataset/datos_limpios_años.json')
+//fetch('Dataset/datos_limpios_años.json')
+fetch('Dataset/avg_viewers.json')
     .then(r => r.json())
     .then(rows => {
     rows.sort((a,b) => {
@@ -23,7 +24,8 @@ fetch('Dataset/datos_limpios_años.json')
 
     const x = rows.map(d => yearQToDateStr(d.Year_Q));
     //const y = rows.map(d => Number(d.Hours_watched) / SCALE);
-    const y = rows.map(d => Number(d.Years_watched) / 1e3);
+    //const y = rows.map(d => Number(d.Years_watched) / 1e3);
+    const y = rows.map(d => Number(d.Avg_viewers));    
     const quarterLabel = rows.map(d => d.Year_Q);
 
     // Serie principal (negra)
@@ -158,7 +160,7 @@ fetch('Dataset/datos_limpios_años.json')
     const layout = {
         title: {
         // text: '<b>Horas vistas en Twitch por trimestre</b>',
-        text: '<b>Tiempo de visualización en Twitch (en miles de años)</b>',
+        text: '<b>Espectadores promedio en Twitch por trimestre</b>',
         font: { family: 'Arial, sans-serif', size: 28, color: '#333' }
         },
         xaxis: {
@@ -170,9 +172,12 @@ fetch('Dataset/datos_limpios_años.json')
         },
         yaxis: {
         rangemode: 'tozero',
-        tickformat: ',.0f',
         showgrid: false,
         showline: true,
+        tickvals: [1000000, 2000000, 3000000, 4000000, 5000000], // valores reales
+        ticktext: ['1', '2', '3', '4', '5'], // cómo quieres que se vean
+        title: 'Millones de espectadores',
+        ticks: 'outside'
         },
         margin: { l: 70, r: 20, t: 80, b: 80 },
         showlegend: false
@@ -193,7 +198,7 @@ fetch('Dataset/datos_limpios_años.json')
         // Inicio del confinamiento (2020-Q1)
         {
             x: x[idxQ1],
-            y: y[idxQ1] - 6,
+            y: y[idxQ1] - 8,
             text: 'Inicio del confinamiento<br>por <b>COVID-19</b> a nivel global',
             showarrow: true,
             arrowhead: 2,
