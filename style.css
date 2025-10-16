@@ -5,13 +5,26 @@ html, body {
   background: #fff;
 }
 
+.charts-container {
+  display: flex;
+  justify-content: left;
+  align-items: flex; /* alinea verticalmente arriba */
+  gap: 20px; /* espacio entre ambos */
+  flex-wrap: wrap; /* permite que se apilen si la pantalla es pequeña */
+  margin-top: 30px;
+}
+
 #chart {
-  width: 95%;
-  height: 670px;
-  max-width: 100%;
-  margin: 30px auto;
+  width: 1100px;
+  max-width: 80%;      /* evita que crezcan demasiado */
+  height: 800px;
   border-radius: 6px;
-  background: #0a0a0ac8;
+}
+
+#mini-chart {
+  width: 150px;
+  max-width: 20%;
+  height: 700px;
 }
 
 #chart .gtitle {
