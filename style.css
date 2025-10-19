@@ -1,3 +1,4 @@
+/* --- Estilos Generales y Contenedores --- */
 html, body {
   margin: 0;
   padding: 0;
@@ -8,26 +9,87 @@ html, body {
 .charts-container {
   display: flex;
   justify-content: left;
-  align-items: flex; /* alinea verticalmente arriba */
-  gap: 20px; /* espacio entre ambos */
-  flex-wrap: wrap; /* permite que se apilen si la pantalla es pequeña */
+  align-items: flex-start; /* Corregido a un valor válido: alinea los items arriba */
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 
+/* --- Estilos del Gráfico Principal --- */
 #chart {
   width: 1100px;
-  max-width: 80%;      /* evita que crezcan demasiado */
+  max-width: 80%;
   height: 800px;
   border-radius: 6px;
-}
-
-#mini-chart {
-  width: 150px;
-  max-width: 20%;
-  height: 700px;
 }
 
 #chart .gtitle {
   font-size: 28px !important;
   font-weight: bold !important;
+}
+
+#miniChart {
+  width: 200px;
+  max-width: 20%;
+  height: 700px;
+  display: none; /* Oculto por defecto */
+}
+
+/* --- Estilos del Panel de Información (Fortnite) --- */
+#fortniteInfo {
+    width: 250px;
+    display: none; 
+    border-radius: 8px;
+    padding: 4px; /* Restaurado a un valor razonable para que el contenido no se comprima */
+    box-sizing: border-box;
+    text-align: center;
+    align-self: flex-start; 
+    margin-top: 50px; 
+}
+
+#fortniteInfo .info-image {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#fortniteInfo .info-title {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+#fortniteInfo .info-text {
+    font-size: 0.9em;
+    color: #555;
+    text-align: justify;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Correcciones de Interacción para Plotly --- */
+
+/* Permite que el cursor atraviese la capa superior de Plotly
+  para poder interactuar con los elementos que están debajo.
+*/
+.svg-container .plot-container .bg {
+  pointer-events: none;
+}
+
+/*
+  Regla combinada para las anotaciones:
+  - Asegura que el texto SÍ reaccione al mouse.
+  - Cambia el cursor a una 'manita'.
+  - Aplica una transición suave al cambio de color.
+*/
+.annotation-text {
+  pointer-events: all !important;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+/* Cambia el color del texto de la anotación al pasar el cursor por encima */
+.annotation-text:hover {
+  fill: #a340f7 !important;
 }
