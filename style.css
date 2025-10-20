@@ -1,3 +1,4 @@
+/* --- Estilos Generales y Contenedores --- */
 html, body {
   margin: 0;
   padding: 0;
@@ -7,27 +8,77 @@ html, body {
 
 .charts-container {
   display: flex;
-  justify-content: left;
-  align-items: flex; /* alinea verticalmente arriba */
-  gap: 20px; /* espacio entre ambos */
-  flex-wrap: wrap; /* permite que se apilen si la pantalla es pequeña */
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 
+/* --- Estilos del Gráfico Principal --- */
 #chart {
   width: 1100px;
-  max-width: 80%;      /* evita que crezcan demasiado */
+  max-width: 80%;
   height: 800px;
   border-radius: 6px;
-}
-
-#mini-chart {
-  width: 150px;
-  max-width: 20%;
-  height: 700px;
 }
 
 #chart .gtitle {
   font-size: 28px !important;
   font-weight: bold !important;
+}
+
+#miniChart {
+  width: 200px;
+  max-width: 20%;
+  height: 700px;
+  display: none;
+}
+
+/* --- Estilos del Panel de Información (Invisible) --- */
+#infoPanel {
+    width: 250px;
+    display: none; /* Regla clave para ocultar el panel al inicio */
+    border-radius: 8px;
+    padding: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    align-self: flex-start; 
+    margin-top: 50px; 
+}
+
+#infoPanel .info-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#infoPanel .info-title {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+#infoPanel .info-text {
+    font-size: 0.9em;
+    color: #555;
+    text-align: justify;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Correcciones de Interacción y Hover para Plotly --- */
+.svg-container .plot-container .bg {
+  pointer-events: none;
+}
+
+.annotation-text {
+  pointer-events: all !important;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.annotation-text:hover {
+  fill: #a340f7 !important;
 }

@@ -1,4 +1,5 @@
 # Carpetas que no van
 Prueba/
-
+.vscode
 # Archivos que no van
+.DS_Store
