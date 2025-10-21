@@ -252,7 +252,7 @@ fetch('Dataset/avg_viewers.json')
                 text: 'La pandemia global por COVID-19 forzó a millones de personas a quedarse en casa, disparando el consumo de entretenimiento digital y plataformas de streaming como Twitch.'
             },
             'Punto máximo': {
-                imageSrc: 'media/images/AmongUs.jpg',
+                imageSrc: 'media/images/Among_Us_art.jpg',
                 audioSrc: 'media/sounds/Among Us Drip Theme Song.mp3',
                 title: 'Auge de los "Party Games"',
                 text: 'En el pico de la pandemia, juegos sociales como Among Us, Fall Guys y las series de GTA Online en Twitch se convirtieron en un fenómeno cultural, rompiendo récords de audiencia.'
