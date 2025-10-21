@@ -229,6 +229,7 @@ fetch('Dataset/avg_viewers.json')
             doubleClick: false,
             displaylogo: false,
             responsive: true,
+            staticPlot: true,
             modeBarButtonsToRemove: ['zoom2d', 'pan2d', 'select2d', 'lasso2d']
         });
 
