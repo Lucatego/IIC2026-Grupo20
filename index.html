@@ -5,8 +5,13 @@
   <title>Espectadores promedio en Twitch (2016 - 2024)</title>
   <script src="https://cdn.plot.ly/plotly-2.34.0.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="title_div">
+    <h1 id="title">Espectadores promedio en <span class="logo-twitch">Twitch</span></h1>
+  </div>
+  
   <div class="charts-container">
     <div id="chart"></div>
 
@@ -18,6 +23,8 @@
     
     <audio id="infoAudio" preload="auto" loop></audio>
   </div>
+
+  <p id="click">(*) Click en cualquier lugar para escuchar audio</p>
     
   <script src="main.js"></script>
 </body>
