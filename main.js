@@ -139,10 +139,6 @@ fetch('Dataset/avg_viewers.json')
         }
 
         const layout = {
-            title: {
-                text: '<b>Espectadores promedio en Twitch</b>',
-                font: { family: 'Arial, sans-serif', size: 32, color: '#333' }
-            },
             hovermode: false,  // Desactiva el hover globalmente
             xaxis: {
                 type: 'date',
@@ -173,17 +169,17 @@ fetch('Dataset/avg_viewers.json')
                 arrowhead: 2, 
                 ax: 0, 
                 ay: -100, 
-                font: { size: 12 }
+                font: { size: 14 }
             },
             { 
                 x: x[idxQ1], 
-                y: y[idxQ1] - 8, 
+                y: y[idxQ1] - 4, 
                 text: 'Inicio del confinamiento<br>por <b>COVID-19</b> a nivel global', 
                 showarrow: true, 
                 arrowhead: 2, 
                 ax: 0, 
-                ay: 85, 
-                font: { size: 12 }
+                ay: 100, 
+                font: { size: 14 }
             },
             { 
                 x: x[idx21Q1], 
@@ -193,7 +189,7 @@ fetch('Dataset/avg_viewers.json')
                 arrowhead: 2, 
                 ax: 0, 
                 ay: -60, 
-                font: { size: 12 }
+                font: { size: 14 }
             },
             { 
                 x: x[idx22Q2], 
@@ -203,7 +199,7 @@ fetch('Dataset/avg_viewers.json')
                 arrowhead: 2, 
                 ax: 0, 
                 ay: 65, 
-                font: { size: 12 }
+                font: { size: 14 }
             },
             { 
                 x: x[idx24Q1], 
@@ -213,7 +209,7 @@ fetch('Dataset/avg_viewers.json')
                 arrowhead: 2, 
                 ax: 0, 
                 ay: -60, 
-                font: { size: 12 }
+                font: { size: 14 }
             }
         ];
 

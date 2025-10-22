@@ -6,21 +6,70 @@ html, body {
   background: #fff;
 }
 
+#title_div {
+  text-align: center;   /* centra el texto horizontalmente */
+  margin-top: 30px;     /* separa del borde superior */
+  margin-bottom: 20px;  /* separa el título del gráfico */
+}
+
+#title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
 .charts-container {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: flex-start; /* gráfico a la izquierda */
+  align-items: center;         /* centra verticalmente infoPanel */
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
   gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 /* --- Estilos del Gráfico Principal --- */
 #chart {
-  width: 1100px;
-  max-width: 80%;
+  flex: 0 0 80%;               /* no crece, no encoge, ocupa 80% exacto */
   height: 800px;
   border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.logo-twitch {
+  font-family: 'Bungee', sans-serif;
+  color: white;                /* Letras blancas */
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Borde morado grueso */
+  -webkit-text-stroke: 2px #9146FF;
+
+  /* Sombra negra para efecto 3D */
+  text-shadow:
+    3px 3px 0px #000,
+    4px 4px 0px #000;
+
+  transform: skew(-5deg);
+}
+
+.logo-twitch:hover {
+  transform: skew(-5deg) scale(1.1);
+  text-shadow:
+    5px 5px 0px #000,
+    0 0 20px #9146FF,
+    0 0 30px #9146FF;
+  transition: 0.3s ease;
+}
+
+#click{
+  text-align: center;
+  align-self: center;
+  font-size: 11px;
 }
 
 #chart .gtitle {
@@ -28,23 +77,15 @@ html, body {
   font-weight: bold !important;
 }
 
-#miniChart {
-  width: 200px;
-  max-width: 20%;
-  height: 700px;
-  display: none;
-}
-
 /* --- Estilos del Panel de Información (Invisible) --- */
 #infoPanel {
-    width: 250px;
-    display: none; /* Regla clave para ocultar el panel al inicio */
-    border-radius: 8px;
-    padding: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    align-self: flex-start; 
-    margin-top: 50px; 
+  flex: 0 0 20%;
+  display: none;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  align-self: center; /* asegura que este panel esté centrado, incluso si los otros no */
 }
 
 #infoPanel .info-image {
