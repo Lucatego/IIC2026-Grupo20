@@ -57,6 +57,34 @@ html, body {
   transform: skew(-5deg);
 }
 
+#buttons_row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#buttons_row button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #cec7d8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#buttons_row button:hover {
+  background-color: #aca7b3;
+}
+
+
+#buttons_row button.active {
+  background-color: #7136c9; /* tono más oscuro */
+  box-shadow: 0 0 10px rgba(145, 70, 255, 0.5);
+}
+
 .logo-twitch:hover {
   transform: skew(-5deg) scale(1.1);
   text-shadow:
@@ -70,6 +98,13 @@ html, body {
   text-align: center;
   align-self: center;
   font-size: 11px;
+}
+
+#click_porcentaje{
+  text-align: center;
+  align-self: center;
+  font-size: 11px;
+  display: none;
 }
 
 #chart .gtitle {
