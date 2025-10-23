@@ -1,0 +1,212 @@
+[
+  {
+    "Year_Q": "2016-Q1",
+    "Avg_viewers": 647504,
+    "Delta": 0,
+    "Pct_change": 0
+  },
+  {
+    "Year_Q": "2016-Q2",
+    "Avg_viewers": 584010,
+    "Delta": -63494,
+    "Pct_change": -9.805962588648098
+  },
+  {
+    "Year_Q": "2016-Q3",
+    "Avg_viewers": 539880,
+    "Delta": -44130,
+    "Pct_change": -7.556377459290076
+  },
+  {
+    "Year_Q": "2016-Q4",
+    "Avg_viewers": 631771,
+    "Delta": 91891,
+    "Pct_change": 17.020634215010745
+  },
+  {
+    "Year_Q": "2017-Q1",
+    "Avg_viewers": 750262,
+    "Delta": 118491,
+    "Pct_change": 18.755371804023934
+  },
+  {
+    "Year_Q": "2017-Q2",
+    "Avg_viewers": 712478,
+    "Delta": -37784,
+    "Pct_change": -5.0361073864863215
+  },
+  {
+    "Year_Q": "2017-Q3",
+    "Avg_viewers": 738246,
+    "Delta": 25768,
+    "Pct_change": 3.6166730762213106
+  },
+  {
+    "Year_Q": "2017-Q4",
+    "Avg_viewers": 786486,
+    "Delta": 48240,
+    "Pct_change": 6.534407230110295
+  },
+  {
+    "Year_Q": "2018-Q1",
+    "Avg_viewers": 952597,
+    "Delta": 166111,
+    "Pct_change": 21.12065567600694
+  },
+  {
+    "Year_Q": "2018-Q2",
+    "Avg_viewers": 1045873,
+    "Delta": 93276,
+    "Pct_change": 9.791758739529932
+  },
+  {
+    "Year_Q": "2018-Q3",
+    "Avg_viewers": 1119053,
+    "Delta": 73180,
+    "Pct_change": 6.997025451464944
+  },
+  {
+    "Year_Q": "2018-Q4",
+    "Avg_viewers": 1163400,
+    "Delta": 44347,
+    "Pct_change": 3.9629043485875926
+  },
+  {
+    "Year_Q": "2019-Q1",
+    "Avg_viewers": 1288864,
+    "Delta": 125464,
+    "Pct_change": 10.784253051401071
+  },
+  {
+    "Year_Q": "2019-Q2",
+    "Avg_viewers": 1268718,
+    "Delta": -20146,
+    "Pct_change": -1.563081907788566
+  },
+  {
+    "Year_Q": "2019-Q3",
+    "Avg_viewers": 1266605,
+    "Delta": -2113,
+    "Pct_change": -0.16654607249207976
+  },
+  {
+    "Year_Q": "2019-Q4",
+    "Avg_viewers": 1206969,
+    "Delta": -59636,
+    "Pct_change": -4.708334484705179
+  },
+  {
+    "Year_Q": "2020-Q1",
+    "Avg_viewers": 1470586,
+    "Delta": 263617,
+    "Pct_change": 21.841240330116186
+  },
+  {
+    "Year_Q": "2020-Q2",
+    "Avg_viewers": 2373963,
+    "Delta": 903377,
+    "Pct_change": 61.42972937318865
+  },
+  {
+    "Year_Q": "2020-Q3",
+    "Avg_viewers": 2167659,
+    "Delta": -206304,
+    "Pct_change": -8.690278660619398
+  },
+  {
+    "Year_Q": "2020-Q4",
+    "Avg_viewers": 2467664,
+    "Delta": 300005,
+    "Pct_change": 13.840045874374152
+  },
+  {
+    "Year_Q": "2021-Q1",
+    "Avg_viewers": 2937390,
+    "Delta": 469726,
+    "Pct_change": 19.035249531540764
+  },
+  {
+    "Year_Q": "2021-Q2",
+    "Avg_viewers": 2983487,
+    "Delta": 46097,
+    "Pct_change": 1.5693183404314803
+  },
+  {
+    "Year_Q": "2021-Q3",
+    "Avg_viewers": 2623600,
+    "Delta": -359887,
+    "Pct_change": -12.062630070115944
+  },
+  {
+    "Year_Q": "2021-Q4",
+    "Avg_viewers": 2586453,
+    "Delta": -37147,
+    "Pct_change": -1.4158789449611242
+  },
+  {
+    "Year_Q": "2022-Q1",
+    "Avg_viewers": 2823376,
+    "Delta": 236923,
+    "Pct_change": 9.160150986698778
+  },
+  {
+    "Year_Q": "2022-Q2",
+    "Avg_viewers": 2567235,
+    "Delta": -256141,
+    "Pct_change": -9.072153336997978
+  },
+  {
+    "Year_Q": "2022-Q3",
+    "Avg_viewers": 2569877,
+    "Delta": 2642,
+    "Pct_change": 0.10291227721654916
+  },
+  {
+    "Year_Q": "2022-Q4",
+    "Avg_viewers": 2381439,
+    "Delta": -188438,
+    "Pct_change": -7.332568835006503
+  },
+  {
+    "Year_Q": "2023-Q1",
+    "Avg_viewers": 2491341,
+    "Delta": 109902,
+    "Pct_change": 4.614940798399614
+  },
+  {
+    "Year_Q": "2023-Q2",
+    "Avg_viewers": 2442014,
+    "Delta": -49327,
+    "Pct_change": -1.9799377122601824
+  },
+  {
+    "Year_Q": "2023-Q3",
+    "Avg_viewers": 2404875,
+    "Delta": -37139,
+    "Pct_change": -1.5208348518886416
+  },
+  {
+    "Year_Q": "2023-Q4",
+    "Avg_viewers": 2465792,
+    "Delta": 60917,
+    "Pct_change": 2.5330630490150163
+  },
+  {
+    "Year_Q": "2024-Q1",
+    "Avg_viewers": 2562190,
+    "Delta": 96398,
+    "Pct_change": 3.9094132838455087
+  },
+  {
+    "Year_Q": "2024-Q2",
+    "Avg_viewers": 2307887,
+    "Delta": -254303,
+    "Pct_change": -9.925220221763409
+  },
+  {
+    "Year_Q": "2024-Q3",
+    "Avg_viewers": 2300365,
+    "Delta": -7522,
+    "Pct_change": -0.3259258360569617
+  }
+]
