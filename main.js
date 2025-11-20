@@ -371,3 +371,91 @@ buttons.forEach(btn => {
     btn.classList.add('active'); // activamos el botón clickeado
   });
 });
+
+// --- FISCALIZACIÓN (Gráfico de Barras) ---
+const chartBarraDiv = document.getElementById('chart-barra');
+const twitchColor = '#9146FF';
+
+// Configuración inicial del gráfico de barras
+var barData = [{
+    x: ['Espectadores'], 
+    y: [0],
+    type: 'bar',
+    width: 0.5,
+    marker: {
+        color: twitchColor
+    },
+    hoverinfo: 'none' 
+}];
+
+var barLayout = {
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    margin: { t: 50, b: 50, l: 60, r: 20 },
+    yaxis: {
+        range: [0, 3.5],
+        tickvals: [1, 2, 3],
+        ticktext: ['1M', '2M', '3M'],
+        showgrid: false,
+        zeroline: true,
+        zerolinecolor: '#333',
+        zerolinewidth: 2,
+        tickfont: { family: 'Segoe UI', size: 14, color: '#666' },
+        fixedrange: true
+    },
+    xaxis: {
+        showgrid: false,
+        zeroline: false,
+        fixedrange: true,
+        tickfont: {
+            family: 'Segoe UI',
+            size: 16,
+            color: '#333',
+            weight: 'bold'
+        }
+    },
+    hovermode: false,
+    transition: { duration: 800, easing: 'cubic-in-out' }
+};
+
+var barConfig = { 
+    displayModeBar: false, 
+    responsive: true,
+    staticPlot: false
+};
+
+// Inicializar el gráfico de barras
+Plotly.newPlot(chartBarraDiv, barData, barLayout, barConfig);
+
+// Función para actualizar el gráfico de barras (accesible desde HTML)
+window.updateBarChart = function(nuevoValor) {
+    Plotly.animate(chartBarraDiv, {
+        data: [{ y: [nuevoValor] }],
+        traces: [0],
+        layout: {}
+    }, {
+        transition: { duration: 800, easing: 'cubic-in-out' },
+        frame: { duration: 800, redraw: false }
+    });
+};
+
+// Event listener para el botón de Fiscalización
+document.getElementById('btn_fiscalizacion').addEventListener('click', () => {
+    document.querySelector('.charts-container').style.display = 'none';
+    document.getElementById('fiscalizacion-container').style.display = 'flex';
+    document.getElementById('click').style.display = 'none';
+    document.getElementById('click_porcentaje').style.display = 'none';
+});
+
+// Modificar los event listeners originales para ocultar fiscalización
+document.getElementById('btn_original').addEventListener('click', () => {
+    document.querySelector('.charts-container').style.display = 'flex';
+    document.getElementById('fiscalizacion-container').style.display = 'none';
+    renderChart('original');
+});
+
+document.getElementById('btn_porcentaje').addEventListener('click', () => {
+    document.querySelector('.charts-container').style.display = 'flex';
+    document.getElementById('fiscalizacion-container').style.display = 'none';
+    renderChart('porcentaje');
+});
