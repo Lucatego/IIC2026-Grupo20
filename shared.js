@@ -6,7 +6,7 @@ Protobject.initialize([
         debug: "local",
     },
     { 
-        name: "Espectadores promedio en Twitch (2016 - 2024)",
+        name: "Index",
         page: "index.html",
         main: true,
         debug: "master",
