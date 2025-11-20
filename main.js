@@ -1,3 +1,34 @@
+
+
+/* 
+*********************
+******* ARUCO *******
+*********************
+*/
+
+const idsAruco = [100, 200, 250, 300];
+
+Protobject.Core.onReceived((order) => {
+    if(order == 100)
+    {
+        updateBarChart(1.0);
+    }
+    else if(order == 200)
+    {
+        updateBarChart(2.0);
+    }
+    else if(order == 250)
+    {
+        updateBarChart(2.5);
+    }
+    else if(order == 300)
+    {
+        updateBarChart(3.0);
+    }
+})
+
+
+
 const Q_START_MONTH = { 1: '01', 2: '04', 3: '07', 4: '10' };
 const info_text = document.getElementById('click_porcentaje');
 

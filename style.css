@@ -197,3 +197,11 @@ html, body {
 .annotation-text:hover {
   fill: #a340f7 !important;
 }
+
+#ProtobjectPlusButton {
+  width: 100px !important;
+}
+
+#ProtobjectPlusButton:after {
+  content: " Connect";
+}
