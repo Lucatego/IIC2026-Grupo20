@@ -3,21 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>Camera</title>
-        <script src="https://app.protobject.com/framework/p.js"></script>
-        <script src="shared.js"></script>
     </head>
 
     <body>
+        <script src="https://app.protobject.com/framework/p.js"></script>
+        <script src="shared.js"></script>
         <h1>Cámara</h1>
         <script>
-            //
-            Protobject.Aruco.start(100, 1);
-            Protobject.Aruco.showPreview({ top: 0, left: 0, width: 1280 / 3, height: 720 / 3 })
+            Protobject.Aruco.start(10, 1);
+            Protobject.Aruco.showPreview({ top: 0, left: 0, width: 720/3, height: 1280/3 })
 
+            
             Protobject.Aruco.onData((data) => {
                 const ids = [100, 200, 250, 300];
-                let detected = [];
-                
+                // let detected = [];
+                console.log("Data entrante")
                 for (const id of ids) {
                     if (data[id]) {
                         // Si el marcador está presente, guarda su id y posición en el eje Y

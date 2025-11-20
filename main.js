@@ -9,6 +9,7 @@
 const idsAruco = [100, 200, 250, 300];
 
 Protobject.Core.onReceived((order) => {
+    console.log(order)
     if(order == 100)
     {
         updateBarChart(1.0);
@@ -24,6 +25,10 @@ Protobject.Core.onReceived((order) => {
     else if(order == 300)
     {
         updateBarChart(3.0);
+    }
+    else
+    {
+        //updateBarChart(0.0);
     }
 })
 
