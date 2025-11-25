@@ -10,21 +10,39 @@ const idsAruco = [100, 200, 250, 300];
 
 Protobject.Core.onReceived((order) => {
     console.log(order)
+    const infoAudio = document.getElementById('infoAudio');
+    
     if(order == 100)
     {
         updateBarChart(1.0);
+        if (infoAudio) {
+            infoAudio.src = 'media/sounds/people_sound_1.mp3';
+            infoAudio.play().catch(e => console.error("Error al reproducir audio:", e));
+        }
     }
     else if(order == 200)
     {
         updateBarChart(2.0);
+        if (infoAudio) {
+            infoAudio.src = 'media/sounds/people_sound_2.mp3';
+            infoAudio.play().catch(e => console.error("Error al reproducir audio:", e));
+        }
     }
     else if(order == 250)
     {
         updateBarChart(2.5);
+        if (infoAudio) {
+            infoAudio.src = 'media/sounds/people_sound_2_5.mp3';
+            infoAudio.play().catch(e => console.error("Error al reproducir audio:", e));
+        }
     }
     else if(order == 300)
     {
         updateBarChart(3.0);
+        if (infoAudio) {
+            infoAudio.src = 'media/sounds/people_sound_3.mp3';
+            infoAudio.play().catch(e => console.error("Error al reproducir audio:", e));
+        }
     }
     else
     {
